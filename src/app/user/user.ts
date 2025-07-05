@@ -3,6 +3,13 @@ import { DUMMY_USERS } from "../dummy-users";
 
 const randomeIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
+interface Usert {
+    id: string;
+    avatar: string;
+    name: string;
+  }
+
+
 @Component({
   selector: 'app-user',
   imports: [],
@@ -10,12 +17,7 @@ const randomeIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.css'
 })
 export class User {
-  @Input({ required: true}) user!: {
-    id: string;
-    avatar: string;
-    name: string
-  }
-
+  @Input({ required: true}) user!: Usert; 
   @Output() select = new EventEmitter();
 
   get imagePath() {return 'assets/users/' + this.user.avatar;}
