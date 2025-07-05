@@ -1,1 +1,16 @@
-<h2>{{ name }} please wait1</h2>
+
+<section id="tasks">
+    <header>
+        <h2>{{ name }}'s task</h2>
+        <menu>
+            <button>Add task</button>
+        </menu>
+    </header>
+    <ul>
+        @for (item of selectedUserTasks; track $index) {
+            <li>
+                <app-task [task]="item"/>
+            </li>
+        }
+    </ul>
+</section>
