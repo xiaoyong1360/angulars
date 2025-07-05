@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { type TaskIn } from './task.model';
 
 @Component({
@@ -9,5 +9,10 @@ import { type TaskIn } from './task.model';
 })
 export class Task {
   @Input() task!: TaskIn;
+  @Output() complete = new EventEmitter<string>();
+
+  onCompleteTask(){
+    this.complete.emit(this.task.id);
+  }
 
 }

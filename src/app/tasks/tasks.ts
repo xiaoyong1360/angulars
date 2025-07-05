@@ -19,4 +19,8 @@ export class Tasks {
     return this.tasks.filter((task) => task.userId === this.userId );
   }
 
+  onCompleteTask(id: string){
+    alert(id);
+  }
+
 }
