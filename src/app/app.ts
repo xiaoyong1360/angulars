@@ -2,10 +2,11 @@ import { Component, computed } from '@angular/core';
 import { Header } from "./header/header";
 import { User } from "./user/user";
 import { DUMMY_USERS } from './dummy-users';
+import { Tasks } from './tasks/tasks';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, User],
+  imports: [Header, User, Tasks],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -17,8 +18,12 @@ export class App {
     return this.users.find((user) => user.id === this.selectedUserId)!; 
   }
 
+  get selectEdUser(){
+    return this.users.find((user) => user.id == this.selectedUserId)!;    
+  }
+
   onSelectUser(id: string){
     this.selectedUserId = id;
-    console.log('select id ' + id);
+    // alert("clicked  " + id);
   }
 }
