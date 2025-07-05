@@ -21,6 +21,7 @@ export class Tasks {
 
   onCompleteTask(id: string){
     alert(id);
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 
 }
