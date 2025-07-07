@@ -27,11 +27,6 @@ export class Tasks {
     return this.tasksService.getUserTask(this.userId);
   }
 
-  onCompleteTask(id: string){
-    alert(id);
-    // this.tasksService  = this.tasks.filter((task) => task.id !== id);
-  }
-
   onStartAddTask(){
     this.isAddingTask = true;
   }
